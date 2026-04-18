@@ -11,38 +11,57 @@ while contador < 5:
     contador  = contador + 1
     print(contador) """
 
-
-#e-commerce
-
+# e -commerce
 dados = {
-    'login': '@pau',
-    'senha': '1234',
-    'carrinho': ['A', 'B', 'C', 'D'],
-    'total': [100.50, 250.55, 4000.00, 10000.00 ]    
-}
- 
+    'login':'@bea',
+    'senha':'1234',
+    'carrinho':[],
+    'total':[],
+    'produtos':['', "A","B","C","D"],
+    'valores':[0,100.50,250.55,4000.0,1000.0],
+    
+    }
+
+# print(dados)
 
 for x in range(3):
-    senha = input("Senha:")
-    login = input("Login:")
-
-    if senha == dados ['senha'] and login == dados['login']:
+    senha = input('digite sua senha: ')
+    login = input('Digite seu login: ')
+    if senha  == dados['senha'] and login == dados['login']:
         print('Seja bem vindo(a)')
-        pergunta = input("Deseja comprar? s/n")
-        while pergunta == 's':
-            produto = int(input("Escolha o produto:"))
-            dados['carrinho'].append(dados['produtos'][produto])
-            dados['total'].append(dados['valores'][produto])
+        pr =  input('Deseja comprar? s/n')
+        while pr == 's':
+            print(f'''Produtos:, 
+            
+            {dados['produtos'][1]} - 1
+            {dados['produtos'][2]} - 2
+            {dados['produtos'][3]} - 3
+            {dados['produtos'][4]} - 4
+            
+            ''') #Tres aspas para pular linha sem usar \n
+            produto = int(input('Escolha o produto'))
+            dados['carrinho'].append(dados['produtos'][produto]) # adciona o produto no carrinho
+            dados['total'].append(dados['valores'][produto]) #adciona o preço do produto no total
             print(dados['carrinho'])
-            print(dados['total'])
             print('R$', sum(dados['total']))
-            pergunta = input("Deseja continuar comprando? s/n")
-        else: 
+            v  =   sum(dados['total'])
+            pr =  input('Deseja continuar? s/n')
+        else:
             print('Forma de pagamento')
-            pag = ['px', 'debito', 'credito']
+            pag = ['','pix - 1', 'cc - 2', 'cd - 3']
+            print(pag)
+            print(pag[int(input('Escolha a forma> 1,2,3'))])
+            print('-------------------------------------')
+            print('R$', v) 
+            print('-------------------------------------')  
+            print('Obrigada volte sempre')
+            break 
 
-            print(pag[int(input('Escolha'))])
+        
+        
+        
     else:
-        print('Tente novamente')
-else: 
-    print("Senha bloqueada")
+        print('tente novamente...')
+else:
+    print('Senha bloqueada')
+
